@@ -4,7 +4,7 @@ import FlightList from "../components/flightList";
 import NoResult from "./NoResult.jsx";
 import { gql, useQuery } from "@apollo/client";
 import { useLocation } from "react-router-dom";
-dotenv = dotenv.config();
+// dotenv = dotenv.config();
 
 export default function Result(){
     //GetFlights name is optional
