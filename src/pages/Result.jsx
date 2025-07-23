@@ -61,7 +61,7 @@ export default function Result(){
     //Forget [] will result in the app only run once
     const api = import.meta.env.VITE_API_URL;
     useEffect(()=>{
-        fetch(`${api}?from=${from}&to=${to}&page=${page}&limit=${limit}`)
+        fetch(`http://localhost:4000/api/flights?from=${from}&to=${to}&page=${page}&limit=${limit}`)
         .then((res)=>res.json())
         .then((data)=>{
             // let result = data.data.filter(checkFOrm)
