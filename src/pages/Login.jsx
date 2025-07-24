@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 function Login({onAuth, setMessage}){
+    const api = import.meta.env.VITE_API_URL;
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ function Login({onAuth, setMessage}){
     const handleSubmit = async (e)=>{
         e.preventDefault();
 
-        const res = await fetch('http://localhost:4000/api/auth/login', {
+        const res = await fetch(`${api}/api/auth/login`, {
             method: 'POST',
             credentials: 'include',
             headers: {'Content-Type': 'application/json'},

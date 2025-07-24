@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react'
 // import './App.css'
 
 function App() {
+  const api = import.meta.env.VITE_API_URL;
   const [user, setUser] = useState(null);
   // const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [message, setMessage] = useState('');
@@ -20,7 +21,7 @@ function App() {
 };
 
 useEffect(()=>{
-  fetch('http://localhost:4000/api/auth/me', {
+  fetch(`${api}/api/auth/me`, {
     credentials: 'include'
   })
   .then(res=>res.ok ? res.json() : null)
@@ -28,7 +29,7 @@ useEffect(()=>{
 }, [])
 
 const handleLogout = async () =>{
-  await fetch('http://localhost:4000/api/auth/logout', {
+  await fetch(`${api}}/api/auth/logout`, {
     method: 'POST',
     credentials: 'include'
   })

@@ -5,15 +5,15 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 // import './index.css'
 import App from './App.jsx'
 
-const client = new ApolloClient({
-  uri: 'http://localhost:5050/graphql',
-  cache: new InMemoryCache
-})
+// const client = new ApolloClient({
+//   uri: 'http://localhost:5050/graphql',
+//   cache: new InMemoryCache
+// })
 
 createRoot(document.getElementById('root')).render(
-  <ApolloProvider client={client}>
+  // <ApolloProvider client={client}>
     <BrowserRouter>
       <App />
     </BrowserRouter>,
-  </ApolloProvider>
+  // </ApolloProvider>
   )

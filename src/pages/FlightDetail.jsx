@@ -2,12 +2,13 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 
 function FlightDetail({token}){
+    const api = import.meta.env.VITE_API_URL;
     const{id} = useParams();
     const [flight, setFlight] = useState(null);
 
     useEffect(()=>{
         const fetchFlight = async () =>{
-            const res = await fetch(`http://localhost:4000/flights/${id}`, {
+            const res = await fetch(`${api}/flights/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
