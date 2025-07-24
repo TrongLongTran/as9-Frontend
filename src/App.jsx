@@ -29,7 +29,7 @@ useEffect(()=>{
 }, [])
 
 const handleLogout = async () =>{
-  await fetch(`${api}}/api/auth/logout`, {
+  await fetch(`${api}/api/auth/logout`, {
     method: 'POST',
     credentials: 'include'
   })
